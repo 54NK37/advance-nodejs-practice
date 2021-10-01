@@ -1,0 +1,5 @@
+{
+    "name" : "find-me",
+    "comment" :  "default is index.js to be loaded after this module is resolved",
+    "main" : "start.js"
+}
