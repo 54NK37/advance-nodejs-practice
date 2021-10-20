@@ -3,6 +3,7 @@ const EventEmitter = require('events');
 
 class WithTime extends EventEmitter {
   execute(asyncFunc, ...args) {
+    console.log(args);
     console.time('execute');
     this.emit('begin');
     asyncFunc(...args, (err, data) => {
@@ -10,7 +11,7 @@ class WithTime extends EventEmitter {
         return this.emit('error', err);
       }
 
-      this.emit('data', data);
+      // this.emit('data', data);
       console.timeEnd('execute');
       this.emit('end');
     });
